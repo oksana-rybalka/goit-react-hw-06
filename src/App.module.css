@@ -1,0 +1,25 @@
+.titlePhonebook {
+  margin: 0 auto;
+  font-family: "Playfair Display", sans-serif;
+  font-size: 600;
+  font-weight: 600;
+  color: rgb(12, 105, 83);
+  text-shadow: -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff,
+    2px 2px 0 #fff, 0px 2px 2px rgba(0, 0, 0, 0.2);
+}
+.parentContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+}
+@media (max-width: 768px) {
+  .titlePhonebook {
+    font-size: 24px;
+    text-align: center;
+  }
+  .parentContainer {
+    gap: 20px;
+    padding: 10px;
+  }
+}

@@ -1,0 +1,74 @@
+.contactFormContainer {
+  display: flex;
+  border-radius: 20px;
+  box-shadow: 0 0 10px 2px rgba(8, 119, 113, 0.7);
+}
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 30px;
+}
+.nameForm,
+.numberForm {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px;
+}
+.label {
+  font-size: 18px;
+  color: #333;
+  padding-left: 5px;
+}
+.field {
+  height: 40px;
+  padding: 10px;
+  font-size: 18px;
+  border: 1px solid rgb(12, 105, 83);
+  border-radius: 15px;
+  outline: none;
+}
+.field:hover,
+.field:focus {
+  outline: 1.5px solid rgb(12, 105, 83);
+}
+.submitForm {
+  width: 160px;
+  height: 60px;
+  padding: 10px;
+  color: #333;
+  border: 1px solid rgb(12, 105, 83);
+  border-radius: 15px;
+  margin-left: 34%;
+}
+.submitForm:hover {
+  box-shadow: 0 0 10px 2px rgba(8, 119, 113, 0.7);
+  color: firebrick;
+}
+.error {
+  color: firebrick;
+}
+@media (max-width: 767px) {
+  .form {
+    gap: 20px;
+    padding: 15px;
+  }
+  .nameForm,
+  .numberForm {
+    padding: 5px;
+  }
+  .label {
+    font-size: 16px;
+  }
+  .field {
+    font-size: 16px;
+    height: 30px;
+  }
+  .submitForm {
+    margin: 0 auto;
+    height: 50px;
+    padding: 5px;
+  }
+}
