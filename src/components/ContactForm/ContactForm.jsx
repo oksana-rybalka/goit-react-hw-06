@@ -3,7 +3,8 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useId } from "react";
 import * as Yup from "yup";
 import { useDispatch, useSelector } from "react-redux";
-import { selectContacts } from "../../redux/contactsSlice";
+import { addContact, selectContacts } from "../../redux/contactsSlice";
+import { nanoid } from "nanoid";
 
 const validationSchema = Yup.object().shape({
   name: Yup.string()
@@ -25,12 +26,17 @@ const initialValues = {
 };
 
 const ContactForm = ({ onSubmit, id }) => {
+  const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
 
   const nameFieldId = useId();
   const numberFieldId = useId();
 
   const handleSubmit = (values, actions) => {
+    const newContact = {
+      id: nanoid(),
+      ...values,
+    };
     const isDuplicate = contacts.find(
       (contact) => contact.name.toLowerCase() === values.name.toLowerCase()
     );
@@ -40,7 +46,7 @@ const ContactForm = ({ onSubmit, id }) => {
       actions.setSubmitting(false);
       return;
     }
-    useDispatch(addContact(contact));
+    dispatch(addContact(newContact));
     actions.resetForm();
   };
 
@@ -62,11 +68,13 @@ const ContactForm = ({ onSubmit, id }) => {
               name="name"
               id={nameFieldId}
             />
-            <ErrorMessage
-              name="name"
-              className={style.error}
-              component="span"
-            />
+            <div className={style.error}>
+              <ErrorMessage
+                name="name"
+                className={style.error}
+                component="span"
+              />
+            </div>
           </div>
           <div className={style.numberForm}>
             <label className={style.label} htmlFor="numberFieldId">

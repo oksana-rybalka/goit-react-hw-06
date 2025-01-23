@@ -1,10 +1,9 @@
 .contactItem {
-  width: 500px;
   display: flex;
   justify-content: space-between;
   border: 2px solid rgb(12, 105, 83);
   border-radius: 20px;
-  padding: 20px;
+  padding: 30px;
 }
 .icon {
   color: rgb(12, 105, 83);
@@ -15,7 +14,6 @@
 }
 
 .contactContainer {
-  width: 300px;
   display: flex;
   flex-direction: column;
 }
@@ -32,7 +30,6 @@
   text-align: left;
 }
 .buttonDelete {
-  width: 120px;
   height: 60px;
   padding: 10px;
   color: #333;
@@ -46,14 +43,9 @@
 }
 @media (max-width: 767px) {
   .contactItem {
-    width: 88%;
     flex-direction: column;
     align-items: flex-start;
     padding: 15px;
-  }
-
-  .contactContainer {
-    width: 260px;
   }
 
   .contactName,
@@ -62,7 +54,6 @@
   }
 
   .buttonDelete {
-    width: 120px;
     height: 50px;
     margin-top: 0;
     margin-left: 69px;

@@ -1,7 +1,6 @@
 .titlePhonebook {
   margin: 0 auto;
   font-family: "Playfair Display", sans-serif;
-  font-size: 600;
   font-weight: 600;
   color: rgb(12, 105, 83);
   text-shadow: -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff,
@@ -15,8 +14,8 @@
 }
 @media (max-width: 768px) {
   .titlePhonebook {
-    font-size: 24px;
     text-align: center;
+    font-size: 30px;
   }
   .parentContainer {
     gap: 20px;

@@ -16,7 +16,6 @@
 }
 
 .input {
-  width: 96%;
   height: 40px;
   padding: 10px;
   font-size: 18px;
@@ -29,11 +28,10 @@ input:hover {
 }
 @media (max-width: 767px) {
   .searchBox {
-    gap: 10px;
+    gap: 5px;
     padding: 20px;
   }
   .input {
-    width: 92%;
     height: 35px;
     font-size: 16px;
   }
