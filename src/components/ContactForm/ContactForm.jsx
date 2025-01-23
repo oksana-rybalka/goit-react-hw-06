@@ -2,7 +2,7 @@ import style from "./ContactForm.module.css";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useId } from "react";
 import * as Yup from "yup";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { selectContacts } from "../../redux/contactsSlice";
 
 const validationSchema = Yup.object().shape({
@@ -24,7 +24,7 @@ const initialValues = {
   number: "",
 };
 
-const ContactForm = ({ onSubmit }) => {
+const ContactForm = ({ onSubmit, id }) => {
   const contacts = useSelector(selectContacts);
 
   const nameFieldId = useId();
@@ -40,7 +40,7 @@ const ContactForm = ({ onSubmit }) => {
       actions.setSubmitting(false);
       return;
     }
-    onSubmit(values);
+    useDispatch(addContact(contact));
     actions.resetForm();
   };
 
